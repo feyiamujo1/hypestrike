@@ -1,8 +1,23 @@
+import { useState } from "react";
+
 const NavBar = () => {
 
+    // Set Nav bg color
+    const [navbarBg, setNavbarbg] = useState(false);
+
+    const changeBackground = () => {
+        if (window.scrollY >= 10) {
+            setNavbarbg(true);
+        } else {
+            setNavbarbg(false);
+        }
+    }
+
+    window.addEventListener('scroll', changeBackground);
+
   return (
-    <div className="w-full p-0 m-0 absolute">
-        <div className="w-11/12 mx-auto py-3.5 flex flex-row justify-between items-center text-white fill-white ">
+    <div className={navbarBg ? "bg-black w-full p-0 m-0 fixed z-50" : "w-full p-0 m-0 absolute "}>
+        <div className= "w-11/12 mx-auto py-3.5 flex flex-row justify-between items-center text-white fill-white " >
             <div className="flex flex-row items-center">
                 <p className="text-lg sm:text-lg md:text-2xl font-sitka font-black tracking-[1px] cursor-pointer text-white">HYPESTRIKE</p>
             </div>

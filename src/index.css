@@ -1,5 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 
 
 @font-face {
@@ -7,25 +10,24 @@
   src: url("../src/Fonts/sitka-small-599.ttf");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Roboto";
   src: url("../src/Fonts/sitka-small-599.ttf");
-}
+} */
 
 @font-face {
   font-family: "Gilroy";
   src: url("./Fonts/radomir-tinkov-gilroy-extrabold.otf");
 }
 
-/* body{
-  font-family: "inter";
-} */
+body{
+  font-family: "roboto";
+}
 
 .outlined{
   -webkit-text-stroke: 1.5px white;
   -webkit-text-fill-color: transparent;
 }
-
 
 @tailwind base;
 @tailwind components;

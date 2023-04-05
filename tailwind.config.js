@@ -19,7 +19,8 @@ module.exports = {
     fontFamily: {
       'sitka': ['Sitka', 'sans-serif'],
       'inter': ['Inter', 'sans-serif'],
-      'roboto': ["Roboto", 'sans-serif']
+      'roboto': ["Roboto", 'sans-serif'],
+      'robotomono': ["Roboto Mono", 'sans-serif']
     }
   },
   plugins: [],
