@@ -25,7 +25,7 @@ body{
 }
 
 .outlined{
-  -webkit-text-stroke: 1.5px white;
+  -webkit-text-stroke: 1.5px #000;
   -webkit-text-fill-color: transparent;
 }
 
