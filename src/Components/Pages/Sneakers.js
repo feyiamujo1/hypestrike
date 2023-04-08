@@ -6,8 +6,8 @@ import Jordans1 from "../../../src/Assest/images/jordans.webp"
 import Adidas from "../../../src/Assest/images/adidas.webp"
 import Puma from "../../../src/Assest/images/puma.webp"
 import Huarache from "../../../src/Assest/images/huarache.webp"
-import NikeBannerImage from "../../../src/Assest/images/nike-removebg-preview.png"
-import AdidasBannerImage from "../../../src/Assest/images/didas-removebg-preview.png"
+// import NikeBannerImage from "../../../src/Assest/images/nike-removebg-preview.png"
+// import AdidasBannerImage from "../../../src/Assest/images/didas-removebg-preview.png"
 import NikeLogo from "../../../src/Assest/images/nikelogo.png"
 import AdidasLogo from "../../../src/Assest/images/adidaslogo.png"
 
@@ -28,7 +28,7 @@ const Sneakers = () => {
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full flex flex-row justify-between items-center">
                     <p className="text-2xl font-semibold">Latest Release</p>
-                    {/* <div className="hidden md:flex flex-row gap-4 ">
+                    <div className="flex flex-row gap-4 ">
                         <div className="h-6 w-6">
                             <svg viewBox="0 0 1024 1024"  className="icon fill-black hover:fill-white cursor-pointer" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -47,7 +47,7 @@ const Sneakers = () => {
                                 </g>
                             </svg>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
                     <div className="border cursor-pointer rounded-md">
@@ -129,7 +129,7 @@ const Sneakers = () => {
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full flex flex-row justify-between items-center">
                     <p className="text-2xl font-semibold">Best Selling</p>
-                    {/* <div className="hidden md:flex flex-row gap-4 ">
+                    <div className="flex flex-row gap-4 ">
                         <div className="h-6 w-6">
                             <svg viewBox="0 0 1024 1024"  className="icon fill-black hover:fill-white cursor-pointer" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -148,7 +148,7 @@ const Sneakers = () => {
                                 </g>
                             </svg>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
                     <div className="border cursor-pointer rounded-md">
@@ -219,7 +219,7 @@ const Sneakers = () => {
                         <div className="p-3 border-t">
                             <p className="text-sm text-[#777777] font-medium">Puma</p>
                             <p className="font-semibold text-lg">&#8358; 32,000</p>
-                            <p className=" font-semibold h-14 mb-1 text-lg">Lebron XX "Metallic Gold"</p>
+                            <p className=" font-semibold h-14 mb-1 text-lg">Lebron XX "The rise of the Metallic Gold"</p>
                             <p className="bg-black font-semibold text-white rounded-md text-center py-3 hover:bg-[#eff0f2] hover:text-black">Add to Cart</p>
                         </div>
                     </div>
@@ -232,7 +232,7 @@ const Sneakers = () => {
                     <p className="text-2xl font-semibold">Brands</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="h-36 relative border rounded-md p-3 flex flex-col justify-end">
+                    {/* <div className="h-36 relative border rounded-md p-3 flex flex-col justify-end">
                         <div className="h-28 z-20 -mb-2">
                             <img className="h-full object-cover object-center " src={NikeBannerImage} alt="" />
                         </div>
@@ -248,6 +248,26 @@ const Sneakers = () => {
                         <p className="text-8xl md:text-8xl xl:text-[132px] w-full outlined absolute -z-10 h-fit font-extrabold left-3 bottom-0 top-0 my-auto brightness-0">Adidas</p>
                         <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
+                        </div>
+                    </div> */}
+                    <div className="h-36 md:h-96 relative border rounded-md p-3 flex flex-col justify-end bg-nike-image bg-center bg-cover bg-no-repeat">
+                        {/* <div className="h-28 z-20 -mb-2">
+                            <img className="h-full object-cover object-center " src={NikeBannerImage} alt="" />
+                        </div> */}
+                        {/* <p className="text-8xl md:text-8xl xl:text-[132px] outlined absolute h-fit font-extrabold left-3 bottom-0 top-0 my-auto brightness-0">Nike</p> */}
+                        <img src={NikeLogo} alt="" className="w-16 absolute top-3 right-3"/>
+                        <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
+                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Nike</p>
+                        </div>
+                    </div>
+                    <div className="h-36 md:h-96 relative border rounded-md p-3 flex flex-col justify-end bg-adidas-image bg-center bg-cover bg-no-repeat">
+                        {/* <div className="h-28 z-20 -mb-2">
+                            <img className="h-full object-cover object-center " src={NikeBannerImage} alt="" />
+                        </div> */}
+                        {/* <p className="text-8xl md:text-8xl xl:text-[132px] w-full outlined absolute -z-10 h-fit font-extrabold left-3 bottom-0 top-0 my-auto brightness-0">Adidas</p> */}
+                        <img src={AdidasLogo} alt="" className="w-16 absolute top-3 right-3"/>
+                        <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
+                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Adidas</p>
                         </div>
                     </div>
                     <div className="h-36 md:h-44 relative border rounded-md p-3 flex flex-col justify-end bg-nike-image bg-center bg-cover bg-no-repeat">
@@ -268,26 +288,6 @@ const Sneakers = () => {
                         <img src={AdidasLogo} alt="" className="w-16 absolute top-3 right-3"/>
                         <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Adidas</p>
-                        </div>
-                    </div>
-                    <div className="h-36 md:h-44 relative border rounded-md p-3 flex flex-col justify-end bg-nike-image bg-center bg-cover bg-no-repeat">
-                        {/* <div className="h-28 z-20 -mb-2">
-                            <img className="h-full object-cover object-center " src={NikeBannerImage} alt="" />
-                        </div> */}
-                        <p className="text-8xl md:text-8xl xl:text-[132px] outlined absolute h-fit font-extrabold left-3 bottom-0 top-0 my-auto brightness-0">Nike</p>
-                        <img src={NikeLogo} alt="" className="w-16 absolute top-3 right-3"/>
-                        <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
-                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
-                        </div>
-                    </div>
-                    <div className="h-36 md:h-44 relative border rounded-md p-3 flex flex-col justify-end bg-adidas-image bg-center bg-cover bg-no-repeat">
-                        {/* <div className="h-28 z-20 -mb-2">
-                            <img className="h-full object-cover object-center " src={NikeBannerImage} alt="" />
-                        </div> */}
-                        <p className="text-8xl md:text-8xl xl:text-[132px] w-full outlined absolute h-fit font-extrabold left-3 bottom-0 top-0 my-auto brightness-0">Adidas</p>
-                        <img src={AdidasLogo} alt="" className="w-16 absolute top-3 right-3"/>
-                        <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
-                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
                 </div>
