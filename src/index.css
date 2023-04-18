@@ -29,6 +29,17 @@ body{
   -webkit-text-fill-color: transparent;
 }
 
+/* .slick-slide{
+  margin-left:  10px;
+  margin-right:  10px;
+} */
+
+/* .slick-list {
+  margin-left: -15px;
+  margin-right: -15px;
+  pointer-events: none;
+} */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
