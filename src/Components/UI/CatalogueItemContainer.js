@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
 
 const CatalogueItemContainer = ({ id, brand, imageFile, price, name, favorite }) => {
+    const [favoriteState, setFavoriteState] = useState(favorite);
   return (
     <div className="border cursor-pointer rounded-md">
         <div className="w-full h-72 relative overflow-hidden">
-            <div className="w-8 h-8 flex flex-row justify-center items-center absolute z-10 right-4 top-4 rounded-md visited:fill-black">
-                <FiHeart className={favorite ? "cursor-pointer w-6 h-6 fill-black" : "cursor-pointer w-6 h-6"}/>
+            <div onClick={()=>setFavoriteState(!favoriteState)} className="w-8 h-8 flex flex-row justify-center items-center absolute z-10 right-4 top-4 rounded-md visited:fill-black">
+                <FiHeart className={favoriteState ? "cursor-pointer w-6 h-6 fill-black" : "cursor-pointer w-6 h-6"}/>
             </div>
             <img src={imageFile} alt="" className="w-full h-full object-cover object-center"/>
         </div>
