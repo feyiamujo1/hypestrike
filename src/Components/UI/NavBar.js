@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Bolt from "../../../src/Assest/images/bolt.jpeg"
 
 const NavBar = () => {
 
@@ -18,8 +19,8 @@ const NavBar = () => {
   return (
     <div className={navbarBg ? "bg-black w-full p-0 m-0 fixed z-[100]" : "w-full p-0 m-0 fixed z-[100] bg-black"}>
         <div className= "w-11/12 mx-auto py-3.5 flex flex-row justify-between items-center text-white fill-white " >
-            <div className="flex flex-row items-center gap-4">
-                <p className="text-lg sm:text-lg md:text-xl font-sitka font-semibold tracking-[1px] cursor-pointer text-white">HYPESTRIKE</p>
+            <div className="flex flex-row items-center gap-2">
+                <div className="text-lg sm:text-lg md:text-xl font-sitka font-semibold tracking-[1px] cursor-pointer text-white flex gap-1 items-center justify-center"><img src={Bolt} alt="" className="w-8 "/><span className="pt-1">HYPESTRIKE</span></div>
             </div>
             <div className="flex flex-row items-center gap-2">
                 {/*<div className="w-8 h-8 md:w-9 md:h-9 flex flex-row justify-center items-center">
