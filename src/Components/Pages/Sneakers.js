@@ -4,16 +4,49 @@ import SmallScreenSneakerImage from "../../../src/Assest/images/small_screen_bg_
 // import ShirtBgImage from "../../../src/Assest/images/bg_shirt.png"
 // import SmallShirtBgImage from "../../../src/Assest/images/small_bg_shirt.png"
 import Lebrons1 from "../../../src/Assest/images/lebrons.webp"
+import Lebrons2 from "../../../src/Assest/images/lebrons_2.webp"
+import Lebrons3 from "../../../src/Assest/images/lebron3.webp"
+import Lebrons4 from "../../../src/Assest/images/lebron4.webp"
+import Lebrons5 from "../../../src/Assest/images/lebron5.webp"
+
+import LebronsLight1 from "../../../src/Assest/images/lebronlight.webp"
+import LebronsLight2 from "../../../src/Assest/images/lebronlight5.webp"
+import LebronsLight3 from "../../../src/Assest/images/lebronlight3.webp"
+import LebronsLight4 from "../../../src/Assest/images/lebronlight4.webp"
+import LebronsLight5 from "../../../src/Assest/images/lebronlight2.webp"
+
 import Jordans1 from "../../../src/Assest/images/jordans.webp"
+import Jordans2 from "../../../src/Assest/images/jordan3.webp"
+import Jordans3 from "../../../src/Assest/images/jordans2.webp"
+import Jordans4 from "../../../src/Assest/images/jordan4.webp"
+import Jordans5 from "../../../src/Assest/images/jordan5.webp"
+
 import Adidas from "../../../src/Assest/images/adidas.webp"
-import Puma from "../../../src/Assest/images/puma.webp"
+// import Adidas1 from "../../../src/Assest/images/adidas.webp"
+import Adidas2 from "../../../src/Assest/images/adidas2.jpg"
+import Adidas3 from "../../../src/Assest/images/adidas3.webp"
+import Adidas4 from "../../../src/Assest/images/adidas4.webp"
+import Adidas5 from "../../../src/Assest/images/adidas5.webp"
+
 import Huarache from "../../../src/Assest/images/huarache.webp"
 import Huarache2 from "../../../src/Assest/images/huarache2.webp"
 import Huarache3 from "../../../src/Assest/images/huarache3.webp"
 import Huarache4 from "../../../src/Assest/images/huarache4.webp"
 import Huarache5 from "../../../src/Assest/images/huarache5.webp"
+
+import Slides from "../../../src/Assest/images/IMG_7797.JPG"
+import Slides2 from "../../../src/Assest/images/IMG_7798.JPG"
+import Slides3 from "../../../src/Assest/images/IMG_7799.JPG"
+import Slides4 from "../../../src/Assest/images/IMG_7800.JPG"
+import Slides5 from "../../../src/Assest/images/IMG_7801.JPG"
+
 import NikeLogo from "../../../src/Assest/images/nikelogo.png";
 import AdidasLogo from "../../../src/Assest/images/adidaslogo.png";
+import ConverseLogo from "../../../src/Assest/images/converselogo.png";
+import PumaLogo from "../../../src/Assest/images/pumalogo.png"
+import JordanLogo from "../../../src/Assest/images/jordanlogo.png"
+import NewBalanceLogo from "../../../src/Assest/images/newbalancelogo.png"
+
 import ShoeCollectionImage from "../../../src/Assest/images/D7uDay4WsAAVJA9.jpg";
 import ClothCollectionImage from "../../../src/Assest/images/fabio-alves-eAUE_FmclYE-unsplash.jpg";
 import CapCollectionImage from "../../../src/Assest/images/yang-deng-2loKxdi6Hmo-unsplash.jpg";
@@ -21,6 +54,7 @@ import SunglassesCollectionImage from "../../../src/Assest/images/pexels-emre-vo
 import AssessoriesCollectionImage from "../../../src/Assest/images/sabrianna-v0fSc3Cz4Wk-unsplash.jpg"
 import PantsCollectionImage from "../../../src/Assest/images/PHOTO-2023-04-26-10-09-08.jpg"
 import BagCollectionImage from "../../../src/Assest/images/bag.webp"
+
 import JacketCollectionImage from "../../../src/Assest/images/jacket.jpg"
 import CustomerCamOneImage from "../../../src/Assest/images/IMG-7670.PNG"
 import CustomerCamTwoImage from "../../../src/Assest/images/IMG-7671.PNG"
@@ -42,25 +76,27 @@ import CatalogueItemContainer from "../UI/CatalogueItemContainer"
 
 const Sneakers = () => {
     const LatestShoesData = [
-        {id: 0, brand: "Nike", name: 'Lebron XX "Metallic Gold"', price: "32,000", image: Lebrons1, image2: "", favorite: false},
-        {id: 1, brand: "Jordans", name: 'Air Jordan 6 "Cool Grey"', price: "54,000", image: Jordans1, image2: "", favorite: true},
-        {id: 2, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, image2: "", favorite: false},
-        {id: 3, brand: "Puma", name: 'Puma TRC Blaze HC', price: "32,000", image: Puma, image2: "", favorite: false},
-        {id: 4, brand: "Nike", name: 'Nike Huarache PRM "Enigma Stone"', price: "33,000", image: Huarache, image2: Huarache2, image3: Huarache3, image4: Huarache4, image5: Huarache5, favorite: true},
-        {id: 5, brand: "Jordans", name: 'Air Jordan 6 "Cool Grey"', price: "54,000", image: Jordans1, image2: "", favorite: false},
-        {id: 6, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, image2: "", favorite: false},
-        {id: 7, brand: "Puma", name: 'Puma TRC Blaze HC', price: "32,000", image: Puma, image2: "", favorite: true},
+        {id: 0, brand: "Nike", name: 'Lebron XX "Metallic Gold"', price: "32,000", image: Lebrons1, image2: Lebrons2, image3: Lebrons3, image4: Lebrons4, image5: Lebrons5, favorite: false},
+        {id: 1, brand: "Jordans", name: 'Air Jordan 1 Mid "Gym Red"', price: "54,000", image: Jordans1, image2: Jordans2, image3: Jordans3, image4: Jordans4, image5: Jordans5, favorite: true},
+        {id: 2, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, image2: Adidas2, image3: Adidas3, image4: Adidas4, image5: Adidas5, favorite: false},
+        {id: 3, brand: "Nike", name: 'Nike Victori One Slides', price: "20,000", image: Slides, image2: Slides2, image3: Slides3, image4: Slides4, image5: Slides5, favorite: true},
+        {id: 4, brand: "Nike", name: 'Lebron XX "Nike Lifer"', price: "32,000", image: LebronsLight1, image2: LebronsLight2, image3: LebronsLight3, image4: LebronsLight4, image5: LebronsLight5, favorite: false},
+        {id: 5, brand: "Nike", name: 'Huarache PRM "Enigma Stone"', price: "33,000", image: Huarache, image2: Huarache2, image3: Huarache3, image4: Huarache4, image5: Huarache5, favorite: true},
+        {id: 6, brand: "Jordans", name: 'Air Jordan 6 "Cool Grey"', price: "54,000", image: Jordans1, image2: Jordans2, image3: Jordans3, image4: Jordans4, image5: Jordans5, favorite: false},
+        {id: 7, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, image2: Adidas2, image3: Adidas3, image4: Adidas4, image5: Adidas5, favorite: false},
+        {id: 8, brand: "Nike", name: 'Lebron XX "Nike Lifer"', price: "32,000", image: LebronsLight1, image2: LebronsLight2, image3: LebronsLight3, image4: LebronsLight4, image5: LebronsLight5, favorite: true},
     ]
 
     const HotestShoesData = [
-        {id: 4, brand: "Nike", name: 'Nike Huarache PRM "Enigma Stone"', price: "33,000", image: Huarache, favorite: true},
-        {id: 1, brand: "Jordans", name: 'Air Jordan 6 "Cool Grey"', price: "54,000", image: Jordans1, favorite: false},
-        {id: 2, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, favorite: true},
-        {id: 0, brand: "Nike", name: 'Lebron XX "Metallic Gold"', price: "32,000", image: Lebrons1, favorite: false},
-        {id: 3, brand: "Puma", name: 'Puma TRC Blaze HC', price: "32,000", image: Puma, favorite: true},
-        {id: 5, brand: "Jordans", name: 'Air Jordan 6 "Cool Grey"', price: "54,000", image: Jordans1, favorite: false},
-        {id: 6, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, favorite: true},
-        {id: 7, brand: "Puma", name: 'Puma TRC Blaze HC', price: "32,000", image: Puma, favorite: false},
+        {id: 5, brand: "Nike", name: 'Huarache PRM "Enigma Stone"', price: "33,000", image: Huarache, image2: Huarache2, image3: Huarache3, image4: Huarache4, image5: Huarache5, favorite: true},
+        {id: 3, brand: "Nike", name: 'Nike Victori One Slides', price: "20,000", image: Slides, image2: Slides2, image3: Slides3, image4: Slides4, image5: Slides5, favorite: true},
+        {id: 0, brand: "Nike", name: 'Lebron XX "Metallic Gold"', price: "32,000", image: Lebrons1, image2: Lebrons2, image3: Lebrons3, image4: Lebrons4, image5: Lebrons5, favorite: false},
+        {id: 1, brand: "Jordans", name: 'Air Jordan 1 Mid "Gym Red"', price: "54,000", image: Jordans1, image2: Jordans2, image3: Jordans3, image4: Jordans4, image5: Jordans5, favorite: true},
+        {id: 2, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, image2: Adidas2, image3: Adidas3, image4: Adidas4, image5: Adidas5, favorite: false},
+        {id: 4, brand: "Nike", name: 'Lebron XX "Nike Lifer"', price: "32,000", image: LebronsLight1, image2: LebronsLight2, image3: LebronsLight3, image4: LebronsLight4, image5: LebronsLight5, favorite: false},
+        {id: 6, brand: "Jordans", name: 'Air Jordan 6 "Cool Grey"', price: "54,000", image: Jordans1, image2: Jordans2, image3: Jordans3, image4: Jordans4, image5: Jordans5, favorite: false},
+        {id: 7, brand: "Adidas", name: 'Adidas NMD_V3', price: "10,000", image: Adidas, image2: Adidas2, image3: Adidas3, image4: Adidas4, image5: Adidas5, favorite: false},
+        {id: 8, brand: "Nike", name: 'Lebron XX "Nike Lifer"', price: "32,000", image: LebronsLight1, image2: LebronsLight2, image3: LebronsLight3, image4: LebronsLight4, image5: LebronsLight5, favorite: true},
     ]
         
     
@@ -96,10 +132,10 @@ const Sneakers = () => {
             </div>
             <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:-right-10 md:w-[580px] md:brightness-100" />
         </div>
-        <div className="py-8 bg-[f1f1f1] flex">
+        {/* <div className="py-8 bg-[f1f1f1] flex">
 
             
-        </div>
+        </div> */}
             {/* <SwiperSlide>
                 <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
                     <img src={window.innerWidth < 768 ? SmallShirtBgImage : ShirtBgImage} alt="" className="w-11/12 h-1/2 object-cover object-top sm:w-[60%] md:h-[98%] md:absolute md:bottom-0 md:left-0 md:w-[500px] md:brightness-100 transform -scale-x-[1]" />
@@ -156,7 +192,7 @@ const Sneakers = () => {
                     {
                         LatestShoesData.map((latestShoe) => (
                             <SwiperSlide>
-                                <CatalogueItemContainer id={latestShoe.id} brand={latestShoe.brand} price={latestShoe.price} name={latestShoe.name} imageFile={latestShoe.image} favorite={latestShoe.favorite} />
+                                <CatalogueItemContainer id={latestShoe.id} brand={latestShoe.brand} price={latestShoe.price} name={latestShoe.name} imageFile={latestShoe.image} imageFile2={latestShoe.image2} favorite={latestShoe.favorite} />
                             </SwiperSlide>
                         ))
                     }
@@ -220,7 +256,7 @@ const Sneakers = () => {
                     {
                         HotestShoesData.map((latestShoe) => (
                             <SwiperSlide>
-                                <CatalogueItemContainer id={latestShoe.id} brand={latestShoe.brand} price={latestShoe.price} name={latestShoe.name} imageFile={latestShoe.image} favorite={latestShoe.favorite} />
+                                <CatalogueItemContainer id={latestShoe.id} brand={latestShoe.brand} price={latestShoe.price} name={latestShoe.name} imageFile={latestShoe.image} imageFile2={latestShoe.image2} favorite={latestShoe.favorite} />
                             </SwiperSlide>
                         ))
                     }
@@ -234,11 +270,11 @@ const Sneakers = () => {
                     <p className=" ">Find your perfect style in our collections</p>
                 </div>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="relative h-[500px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={ShoeCollectionImage} alt="" className="h-full w-full object-fill group-hover:scale-150 transition-all ease-out duration-700" />
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4  group-hover:bg-[#eff0f2] group-hover:text-black">Sneakers</p>
                     </div>
-                    <div className="relative h-[500px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={ClothCollectionImage} alt="" className="h-full w-full object-fill group-hover:scale-150 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Shirts</p>
                     </div>
@@ -250,7 +286,7 @@ const Sneakers = () => {
                         <img src={SunglassesCollectionImage} alt="" className="h-full object-cover w-full object-center group-hover:scale-150 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Sunglasses</p>
                     </div>
-                    <div className="relative h-[500px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={PantsCollectionImage} alt="" className="h-full w-full object-fill group-hover:scale-150 transition-all ease-out duration-700 " />
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Pants</p>
                     </div>
@@ -258,7 +294,7 @@ const Sneakers = () => {
                         <img src={BagCollectionImage} alt="" className="h-full object-cover w-full group-hover:scale-150 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Bags</p>
                     </div>
-                    <div className="relative h-[500px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={JacketCollectionImage} alt="" className="h-full w-full object-cover group-hover:scale-150 transition-all ease-out duration-700"/>
                         <p className="w-fit px-6 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Jackets & Hoodies</p>
                     </div>
@@ -270,20 +306,21 @@ const Sneakers = () => {
                 </div>
             </div>
         </div>
+        {/*Dont forget this section
         <div className="py-8 border-b">
-            <div className="mx-auto w-11/12 space-y-6">
+        //     <div className="mx-auto w-11/12 space-y-6">
                 
-            </div>
-            <div className="mx-auto w-11/12 space-y-6">
+        //     </div>
+        //     <div className="mx-auto w-11/12 space-y-6">
 
-            </div>
-            <div className="mx-auto w-11/12 space-y-6">
+        //     </div>
+        //     <div className="mx-auto w-11/12 space-y-6">
 
-            </div>
-            <div className="mx-auto w-11/12 space-y-6">
+        //     </div>
+        //     <div className="mx-auto w-11/12 space-y-6">
 
-            </div>
-        </div>
+        //     </div>
+        </div> */}
         <div className="py-8 border-b">
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full">
@@ -310,9 +347,28 @@ const Sneakers = () => {
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full">
                     <p className="text-2xl font-semibold">Trending Brands</p>
+                    <p className=" ">Brands with unique trends and the latest fits</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="h-36 md:h-[400px] relative border rounded-md p-3 flex flex-col justify-end bg-nike-image bg-center bg-cover bg-no-repeat">
+                <div className="flex flex-wrap justify-between gap-4">
+                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                        <img src={NikeLogo} alt="" className="w-9/12" />
+                    </div>
+                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                        <img src={AdidasLogo} alt="" className="w-9/12" />
+                    </div>
+                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                        <img src={ConverseLogo} alt="" className="w-9/12" />
+                    </div>
+                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                        <img src={JordanLogo} alt="" className="w-9/12" />
+                    </div>
+                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                        <img src={PumaLogo} alt="" className="w-9/12" />
+                    </div>
+                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                        <img src={NewBalanceLogo} alt="" className="w-9/12" />
+                    </div>
+                    {/* <div className="h-36 md:h-[400px] relative border rounded-md p-3 flex flex-col justify-end bg-nike-image bg-center bg-cover bg-no-repeat">
                         <img src={NikeLogo} alt="" className="w-16 absolute top-3 right-3"/>
                         <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Nike</p>
@@ -335,7 +391,7 @@ const Sneakers = () => {
                         <div className="absolute top-0 bottom-0 right-3 h-full py-3 flex flex-col justify-end ">
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Adidas</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
@@ -343,7 +399,7 @@ const Sneakers = () => {
             <div className="w-11/12 mx-auto"> 
                 <div className="w-full mb-2">
                     <p className="text-2xl font-semibold ">Exclusive Offers</p>
-                    <p>We guarantee blah blah blah</p>
+                    <p>Our services are guaranteed</p>
                 </div>
                 <div className="w-full grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 ">
                     <div className="flex flex-row gap-1 items-center">
