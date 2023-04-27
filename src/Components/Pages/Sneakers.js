@@ -64,7 +64,7 @@ import CustomerCamThreeImage from "../../../src/Assest/images/IMG-7672.PNG"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
-// import { Navigation, Autoplay } from "swiper"; //Scrollbar
+import { Autoplay, Scrollbar } from "swiper"; //Navigation
 
 // Import Swiper styles
 import 'swiper/css';
@@ -110,18 +110,18 @@ const Sneakers = () => {
 
   return (
     <div className="p-0 m-0 font-roboto">
-        {/* <Swiper
-        navigation={true} 
+        {/* <Swiper 
+        // navigation={true} 
 
-        speed={3000}
-        autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-        }}
-        modules={[Navigation, Autoplay ]} //Scrollbar
-        // scrollbar={{ hide: true, draggable: true }}
-        className="mySwiper" 
-        >*/}
+        // speed={3000}
+        // autoplay={{
+        //     delay: 2500,
+        //     disableOnInteraction: false,
+        // }}
+        // modules={[ Scrollbar ]} // Navigation, Autoplay
+        // scrollbar={{ draggable: true }} //hide: true,
+        // className="mySwiper" 
+        // >*/}
         <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
             <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
                 <div className="w-full md:max-w-[500px] space-y-3 z-50">
@@ -132,6 +132,17 @@ const Sneakers = () => {
             </div>
             <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:-right-10 md:w-[580px] md:brightness-100" />
         </div>
+        {/* <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+            <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
+                <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                    <h2 className="text-xl">Latest Kicks</h2>
+                    <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
+                    <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
+                </div>
+            </div>
+            <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:-right-10 md:w-[580px] md:brightness-100" />
+        </div> */}
+        {/* </Swiper> */}
         {/* <div className="py-8 bg-[f1f1f1] flex">
 
             
@@ -271,35 +282,35 @@ const Sneakers = () => {
                 </div>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
-                        <img src={ShoeCollectionImage} alt="" className="h-full w-full object-fill group-hover:scale-150 transition-all ease-out duration-700" />
+                        <img src={ShoeCollectionImage} alt="" className="h-full w-full object-fill group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700" />
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4  group-hover:bg-[#eff0f2] group-hover:text-black">Sneakers</p>
                     </div>
                     <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
-                        <img src={ClothCollectionImage} alt="" className="h-full w-full object-fill group-hover:scale-150 transition-all ease-out duration-700"/>
+                        <img src={ClothCollectionImage} alt="" className="h-full w-full object-fill group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Shirts</p>
                     </div>
                     <div className="relative row-span-1 overflow-hidden group cursor-pointer">
-                        <img src={CapCollectionImage} alt="" className="h-full object-cover w-full group-hover:scale-150 transition-all ease-out duration-700"/>
+                        <img src={CapCollectionImage} alt="" className="h-full object-cover w-full group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Head Gears</p>
                     </div>
                     <div className="relative row-span-1 overflow-hidden group cursor-pointer">
-                        <img src={SunglassesCollectionImage} alt="" className="h-full object-cover w-full object-center group-hover:scale-150 transition-all ease-out duration-700"/>
+                        <img src={SunglassesCollectionImage} alt="" className="h-full object-cover w-full object-center group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Sunglasses</p>
                     </div>
                     <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
-                        <img src={PantsCollectionImage} alt="" className="h-full w-full object-fill group-hover:scale-150 transition-all ease-out duration-700 " />
+                        <img src={PantsCollectionImage} alt="" className="h-full w-full object-fill group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700 " />
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Pants</p>
                     </div>
                     <div className="relative h-[267px] row-span-1 overflow-hidden group cursor-pointer">
-                        <img src={BagCollectionImage} alt="" className="h-full object-cover w-full group-hover:scale-150 transition-all ease-out duration-700"/>
+                        <img src={BagCollectionImage} alt="" className="h-full object-cover w-full group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Bags</p>
                     </div>
                     <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
-                        <img src={JacketCollectionImage} alt="" className="h-full w-full object-cover group-hover:scale-150 transition-all ease-out duration-700"/>
+                        <img src={JacketCollectionImage} alt="" className="h-full w-full object-cover group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-fit px-6 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Jackets & Hoodies</p>
                     </div>
                     <div className="relative h-[267px] row-span-1 overflow-hidden group cursor-pointer">
-                        <img src={AssessoriesCollectionImage} alt="" className="h-full object-cover w-full object-center group-hover:scale-150 transition-all ease-out duration-700"/>
+                        <img src={AssessoriesCollectionImage} alt="" className="h-full object-cover w-full object-center group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Assessories</p>
                     </div>
 
@@ -350,22 +361,22 @@ const Sneakers = () => {
                     <p className=" ">Brands with unique trends and the latest fits</p>
                 </div>
                 <div className="flex flex-wrap justify-between gap-4">
-                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                    <div className="border h-[100px] w-[100px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
                         <img src={NikeLogo} alt="" className="w-9/12" />
                     </div>
-                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                    <div className="border h-[100px] w-[100px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
                         <img src={AdidasLogo} alt="" className="w-9/12" />
                     </div>
-                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                    <div className="border h-[100px] w-[100px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
                         <img src={ConverseLogo} alt="" className="w-9/12" />
                     </div>
-                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                    <div className="border h-[100px] w-[100px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
                         <img src={JordanLogo} alt="" className="w-9/12" />
                     </div>
-                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                    <div className="border h-[100px] w-[100px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
                         <img src={PumaLogo} alt="" className="w-9/12" />
                     </div>
-                    <div className="border h-[80px] w-[80px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
+                    <div className="border h-[100px] w-[100px] md:h-[110px] md:w-[110px] xl:h-[140px] xl:w-[140px] rounded-full flex justify-center items-center">
                         <img src={NewBalanceLogo} alt="" className="w-9/12" />
                     </div>
                     {/* <div className="h-36 md:h-[400px] relative border rounded-md p-3 flex flex-col justify-end bg-nike-image bg-center bg-cover bg-no-repeat">
