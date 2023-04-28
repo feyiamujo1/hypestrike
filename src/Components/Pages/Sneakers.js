@@ -72,10 +72,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
-// Animation Library
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
 import CatalogueItemContainer from "../UI/CatalogueItemContainer"
 
 const Sneakers = () => {
@@ -108,7 +104,6 @@ const Sneakers = () => {
     const hotestSlider = useRef(null);
     const heroSlider = useRef(null);
     const textContainer = useRef(null);
-    const imageContainer = useRef(null);
 
     const latestSliderPrevButton = useRef(null);
     const latestSliderNextButton = useRef(null);
@@ -119,28 +114,21 @@ const Sneakers = () => {
 
     const displaySliderIndex = () =>{
         setSliderIndex(heroSlider.current.realIndex);
-        console.log(heroSlider.current.realIndex);
+        // console.log(heroSlider.current.realIndex);
 
     }
 
-    // useEffect(() => {
-    //     AOS.init();
-    // }, []);
     useEffect(() => {
-        // const swiper = new Swiper(heroSlider.current, {
-        //   // swiper options go here
-        // });
     
         heroSlider.current.on('slideChange', function() {
-            // Remove the animation class from the previous active slide
-            // AOS.refresh(); data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1500"
-            console.log("Hola"); 
-            const prevActiveSlide = heroSlider.current.slides[heroSlider.current.previousIndex];
-            prevActiveSlide.querySelector('.slide-content').classList.remove('fade-in');
-
+            // remove the custom class from all slide content elements
+            document.querySelectorAll('.slide-content').forEach(el => {
+            el.classList.remove('slide-image-right', 'slide-image-left');
+            });
+            
             // Add the animation class to the new active slide
-            const newActiveSlide = heroSlider.current.slides[heroSlider.current.activeIndex];
-            newActiveSlide.querySelector('.slide-content').classList.add('fade-in');
+            const newActiveSlide = heroSlider.current.slides[heroSlider.current.realIndex];
+            newActiveSlide.querySelector('.slide-content').classList.add('slide-image-right');
         });
     }, []);
 
@@ -158,7 +146,7 @@ const Sneakers = () => {
         //     delay: 2500,
         //     disableOnInteraction: false,
         // }}
-        onSlideChange={() => {displaySliderIndex(); AOS.refresh()}}
+        onSlideChange={() => {displaySliderIndex()}}
         modules={[ Scrollbar, EffectFade, Autoplay ]} // Navigation, Autoplay
         scrollbar={{ draggable: true }} //hide: true,
         onBeforeInit={(swiper) => {
@@ -168,47 +156,47 @@ const Sneakers = () => {
         >
             <SwiperSlide>
                 <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
-                    <div  ref={textContainer} className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center slide-content">
+                    <div  ref={textContainer} className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center ">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
                             <h2 className="text-xl">Latest Kicks</h2>
-                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">1. Stack Your Rotation With The Hotest</p>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
-                    <img ref={imageContainer} src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100 " />
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100 slide-content" />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1] slide-content">
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100 " />
+                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1] ">
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100 slide-content" />
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center ">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
                             <h2 className="text-xl">Latest Kicks</h2>
-                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">2. Stack Your Rotation With The Hotest</p>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1] slide-content">
+                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
                             <h2 className="text-xl">Latest Kicks</h2>
-                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">3. Stack Your Rotation With The Hotest</p>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100" />
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100 slide-content" />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1] slide-content">
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100" />
+                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100 slide-content" />
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
                             <h2 className="text-xl">Latest Kicks</h2>
-                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">2. Stack Your Rotation With The Hotest</p>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>

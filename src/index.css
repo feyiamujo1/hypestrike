@@ -48,22 +48,41 @@ body{
   }
 }
 
-/* .slide-content {
+.slide-image-right {
   opacity: 0;
   transform: translateX(100%);
-  animation: fade-in 2s ease-in-out forwards;
+  animation: fade-right 1s ease-in-out forwards;
 }
 
-@keyframes fade-in {
+@keyframes fade-right {
   from {
-    transform: translateX(40%);
+    transform: translateX(30%);
     opacity: 0;
   }
   to {
     transform: translateX(0%);
     opacity: 1;
   }
-} */
+}
+
+.slide-image-left {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: fade-right 1s ease-in-out forwards;
+}
+
+@keyframes fade-left {
+  from {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-0%);
+    opacity: 1;
+  }
+}
+
+
 
 @tailwind base;
 @tailwind components;
