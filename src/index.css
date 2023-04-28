@@ -34,21 +34,35 @@ body{
   font-size: 36px !important;
 }
 
+.swiper-scrollbar{
+  width: 91.67% !important;
+  margin: 0 auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
 @media (max-width: 768px ) {
   .swiper-button-next:after, .swiper-button-prev:after{
     font-size: 32px !important;
   }
 }
 
-/* .slick-slide{
-  margin-left:  10px;
-  margin-right:  10px;
-} */
+/* .slide-content {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: fade-in 2s ease-in-out forwards;
+}
 
-/* .slick-list {
-  margin-left: -15px;
-  margin-right: -15px;
-  pointer-events: none;
+@keyframes fade-in {
+  from {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 } */
 
 @tailwind base;

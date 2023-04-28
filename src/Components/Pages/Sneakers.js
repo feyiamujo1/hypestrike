@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import SneakerImage from "../../../src/Assest/images/bg_shoe.png"
 import SmallScreenSneakerImage from "../../../src/Assest/images/small_screen_bg_shoe.png"
 // import ShirtBgImage from "../../../src/Assest/images/bg_shirt.png"
@@ -63,16 +63,20 @@ import CustomerCamThreeImage from "../../../src/Assest/images/IMG-7672.PNG"
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
 // import required modules
-import { Autoplay, Scrollbar } from "swiper"; //Navigation
+import { Autoplay, Scrollbar, EffectFade  } from "swiper"; //Navigation
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
+
+// Animation Library
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import CatalogueItemContainer from "../UI/CatalogueItemContainer"
-
-
 
 const Sneakers = () => {
     const LatestShoesData = [
@@ -102,63 +106,138 @@ const Sneakers = () => {
     
     const latestSlider = useRef(null);
     const hotestSlider = useRef(null);
+    const heroSlider = useRef(null);
+    const textContainer = useRef(null);
+    const imageContainer = useRef(null);
 
     const latestSliderPrevButton = useRef(null);
     const latestSliderNextButton = useRef(null);
     const hotestSliderPrevButton = useRef(null);
     const hotestSliderNextButton = useRef(null);
 
+    const [sliderIndex, setSliderIndex] = useState(0);
+
+    const displaySliderIndex = () =>{
+        setSliderIndex(heroSlider.current.realIndex);
+        console.log(heroSlider.current.realIndex);
+
+    }
+
+    // useEffect(() => {
+    //     AOS.init();
+    // }, []);
+    useEffect(() => {
+        // const swiper = new Swiper(heroSlider.current, {
+        //   // swiper options go here
+        // });
+    
+        heroSlider.current.on('slideChange', function() {
+            // Remove the animation class from the previous active slide
+            // AOS.refresh(); data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1500"
+            console.log("Hola"); 
+            const prevActiveSlide = heroSlider.current.slides[heroSlider.current.previousIndex];
+            prevActiveSlide.querySelector('.slide-content').classList.remove('fade-in');
+
+            // Add the animation class to the new active slide
+            const newActiveSlide = heroSlider.current.slides[heroSlider.current.activeIndex];
+            newActiveSlide.querySelector('.slide-content').classList.add('fade-in');
+        });
+    }, []);
+
   return (
     <div className="p-0 m-0 font-roboto">
-        {/* <Swiper 
-        // navigation={true} 
-
-        // speed={3000}
+        <Swiper
+        effect={"fade"}
+        fadeEffect={{
+            crossFade: true,
+        }}
+        loop={true}
+        speed={1000}
+        // slidesPerView={1}
         // autoplay={{
         //     delay: 2500,
         //     disableOnInteraction: false,
         // }}
-        // modules={[ Scrollbar ]} // Navigation, Autoplay
-        // scrollbar={{ draggable: true }} //hide: true,
-        // className="mySwiper" 
-        // >*/}
-        <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
-            <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
-                <div className="w-full md:max-w-[500px] space-y-3 z-50">
-                    <h2 className="text-xl">Latest Kicks</h2>
-                    <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
-                    <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
-                </div>
-            </div>
-            <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:-right-10 md:w-[580px] md:brightness-100" />
-        </div>
-        {/* <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
-            <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
-                <div className="w-full md:max-w-[500px] space-y-3 z-50">
-                    <h2 className="text-xl">Latest Kicks</h2>
-                    <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
-                    <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
-                </div>
-            </div>
-            <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:-right-10 md:w-[580px] md:brightness-100" />
-        </div> */}
-        {/* </Swiper> */}
-        {/* <div className="py-8 bg-[f1f1f1] flex">
-
-            
-        </div> */}
-            {/* <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
-                    <img src={window.innerWidth < 768 ? SmallShirtBgImage : ShirtBgImage} alt="" className="w-11/12 h-1/2 object-cover object-top sm:w-[60%] md:h-[98%] md:absolute md:bottom-0 md:left-0 md:w-[500px] md:brightness-100 transform -scale-x-[1]" />
-                    <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center">
+        onSlideChange={() => {displaySliderIndex(); AOS.refresh()}}
+        modules={[ Scrollbar, EffectFade, Autoplay ]} // Navigation, Autoplay
+        scrollbar={{ draggable: true }} //hide: true,
+        onBeforeInit={(swiper) => {
+            heroSlider.current = swiper;
+        }}
+        className="mySwiper relative" 
+        >
+            <SwiperSlide>
+                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                    <div  ref={textContainer} className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center slide-content">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
-                            <h2 className="text-xl">Latest Fits</h2>
-                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">One-Stop Shop For Designer Threads</p>
-                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Coming Soon</p>
+                            <h2 className="text-xl">Latest Kicks</h2>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">1. Stack Your Rotation With The Hotest</p>
+                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
+                        </div>
+                    </div>
+                    <img ref={imageContainer} src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100 " />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1] slide-content">
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100 " />
+                    <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center ">
+                        <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                            <h2 className="text-xl">Latest Kicks</h2>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">2. Stack Your Rotation With The Hotest</p>
+                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
                 </div>
-            </SwiperSlide> */}
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1] slide-content">
+                    <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
+                        <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                            <h2 className="text-xl">Latest Kicks</h2>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">3. Stack Your Rotation With The Hotest</p>
+                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
+                        </div>
+                    </div>
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100" />
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1] slide-content">
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100" />
+                    <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center">
+                        <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                            <h2 className="text-xl">Latest Kicks</h2>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">2. Stack Your Rotation With The Hotest</p>
+                            <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
+                        </div>
+                    </div>
+                </div>
+            </SwiperSlide>
+            <div className="hidden  absolute bottom-20 left-12 md:flex flex-row gap-4 z-[500] items-center">
+                <div className="h-6 w-6">
+                    <svg viewBox="0 0 1024 1024" onClick={() => heroSlider.current.slidePrev()} className="icon fill-black hover:fill-slate-600 cursor-pointer" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div>
+                    <p className="font-semibold text-lg"><span className="text-3xl">0{sliderIndex + 1}</span>/04</p>
+                </div>
+                <div className="h-6 w-6 rotate-180">
+                    <svg viewBox="0 0 1024 1024" onClick={() => heroSlider.current.slideNext()} className="icon fill-black hover:fill-slate-600 cursor-pointer" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" ></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </Swiper>
         <div className="py-8 border-b">
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full flex flex-row justify-between items-center gap-4">
@@ -190,10 +269,6 @@ const Sneakers = () => {
                 <Swiper
                     ref={latestSlider}
                     spaceBetween={15}
-                    // navigation={{
-                    //     nextEl: latestSliderNextButton.current,
-                    //     prevEl: latestSliderPrevButton.current,
-                    // }}
                     slidesPerView={window.innerWidth < 640 ? 1 : window.innerWidth >= 640 &&  window.innerWidth < 768 ? 2
                                     : window.innerWidth >= 768 &&  window.innerWidth < 1280 ? 3 : 4}
                     onBeforeInit={(swiper) => {
@@ -207,24 +282,7 @@ const Sneakers = () => {
                             </SwiperSlide>
                         ))
                     }
-                    {/* <SwiperSlide>
-                        <div className="border cursor-pointer rounded-md">
-                            <div className="w-full h-72 relative overflow-hidden">
-                                <div className="w-8 h-8 flex flex-row justify-center items-center absolute z-10 right-4 top-4 rounded-md group visited:fill-black">
-                                    <FiHeart className="cursor-pointer w-6 h-6 group-visited:fill-black"/>
-                                </div>
-                                <img src={Lebrons1} alt="" className="w-full h-full object-cover object-center"/>
-                            </div>
-                            <div className="p-3 border-t">
-                                <p className="text-sm text-[#777777] font-medium">Nike</p>
-                                <p className="font-semibold text-lg">&#8358; 32,000</p>
-                                <p className=" font-semibold h-14 mb-1 text-lg">Lebron XX "Metallic Gold"</p>
-                                <p className="bg-black font-semibold text-white rounded-md text-center py-3 hover:bg-[#eff0f2] hover:text-black">Add to Cart</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>*/}
                 </Swiper>
-                {/* className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"  */}
             </div>
         </div>
         <div  className="py-8 border-b">
