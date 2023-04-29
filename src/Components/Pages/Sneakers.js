@@ -59,6 +59,8 @@ import JacketCollectionImage from "../../../src/Assest/images/jacket.jpg"
 import CustomerCamOneImage from "../../../src/Assest/images/IMG-7670.PNG"
 import CustomerCamTwoImage from "../../../src/Assest/images/IMG-7671.PNG"
 import CustomerCamThreeImage from "../../../src/Assest/images/IMG-7672.PNG"
+import AirBgImage from "../../../src/Assest/images/jordan3bg.jpg"
+import JsBgImage from "../../../src/Assest/images/jsbg32.png"
 
 
 // Import Swiper React components
@@ -121,14 +123,17 @@ const Sneakers = () => {
     useEffect(() => {
     
         heroSlider.current.on('slideChange', function() {
-            // remove the custom class from all slide content elements
-            document.querySelectorAll('.slide-content').forEach(el => {
-            el.classList.remove('slide-image-right', 'slide-image-left');
-            });
+            if (window.innerWidth > 768){
+                // remove the custom class from all slide content elements
+                document.querySelectorAll('.slide-content').forEach(el => {
+                el.classList.remove('slide-image-right', 'slide-image-left');
+                });
+                
+                // Add the animation class to the new active slide
+                const newActiveSlide = heroSlider.current.slides[heroSlider.current.realIndex];
+                newActiveSlide.querySelector('.slide-content').classList.add('slide-image-right');
+            }
             
-            // Add the animation class to the new active slide
-            const newActiveSlide = heroSlider.current.slides[heroSlider.current.realIndex];
-            newActiveSlide.querySelector('.slide-content').classList.add('slide-image-right');
         });
     }, []);
 
@@ -139,13 +144,13 @@ const Sneakers = () => {
         fadeEffect={{
             crossFade: true,
         }}
-        loop={true}
+        // loop={true}
         speed={1000}
         // slidesPerView={1}
-        // autoplay={{
-        //     delay: 2500,
-        //     disableOnInteraction: false,
-        // }}
+        autoplay={ window.innerWidth < 768 ? {
+            delay: 2500,
+            disableOnInteraction: false,
+        } : false}
         onSlideChange={() => {displaySliderIndex()}}
         modules={[ Scrollbar, EffectFade, Autoplay ]} // Navigation, Autoplay
         scrollbar={{ draggable: true }} //hide: true,
@@ -155,7 +160,7 @@ const Sneakers = () => {
         className="mySwiper relative" 
         >
             <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
                     <div  ref={textContainer} className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center ">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
                             <h2 className="text-xl">Latest Kicks</h2>
@@ -163,12 +168,12 @@ const Sneakers = () => {
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100 slide-content" />
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:right-10 md:w-[520px] md:brightness-100 slide-content" />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1] ">
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100 slide-content" />
+                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1] ">
+                    <img src={JsBgImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-bottom mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:left-10 md:w-[520px] md:brightness-100 slide-content" />
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center ">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
                             <h2 className="text-xl">Latest Kicks</h2>
@@ -179,7 +184,7 @@ const Sneakers = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
                             <h2 className="text-xl">Latest Kicks</h2>
@@ -187,11 +192,11 @@ const Sneakers = () => {
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:right-10 md:w-[580px] md:brightness-100 slide-content" />
+                    <img src={AirBgImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:right-10 md:w-[580px] md:brightness-100 slide-content" />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-white h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
                     <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100 slide-content" />
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center">
                         <div className="w-full md:max-w-[500px] space-y-3 z-50">
