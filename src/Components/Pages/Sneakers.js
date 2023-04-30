@@ -47,20 +47,21 @@ import PumaLogo from "../../../src/Assest/images/pumalogo.png"
 import JordanLogo from "../../../src/Assest/images/jordanlogo.png"
 import NewBalanceLogo from "../../../src/Assest/images/newbalancelogo.png"
 
-import ShoeCollectionImage from "../../../src/Assest/images/D7uDay4WsAAVJA9.jpg";
+import ShoeCollectionImage from "../../../src/Assest/images/charles-etoroma--z-X3MJ1VOI-unsplash.jpg";
 import ClothCollectionImage from "../../../src/Assest/images/fabio-alves-eAUE_FmclYE-unsplash.jpg";
-import CapCollectionImage from "../../../src/Assest/images/yang-deng-2loKxdi6Hmo-unsplash.jpg";
-import SunglassesCollectionImage from "../../../src/Assest/images/pexels-emre-vonal-7858515.jpg"
-import AssessoriesCollectionImage from "../../../src/Assest/images/sabrianna-v0fSc3Cz4Wk-unsplash.jpg"
+import CapCollectionImage from "../../../src/Assest/images/cappic.jpeg";
+// import SunglassesCollectionImage from "../../../src/Assest/images/pexels-emre-vonal-7858515.jpg"
+import AssessoriesCollectionImage from "../../../src/Assest/images/ruan-richard-rodrigues-QwRwbZe6dWc-unsplash.jpg"
 import PantsCollectionImage from "../../../src/Assest/images/PHOTO-2023-04-26-10-09-08.jpg"
-import BagCollectionImage from "../../../src/Assest/images/bag.webp"
+import BagCollectionImage from "../../../src/Assest/images/jessica-radanavong-IchPBHFD0pw-unsplash.jpg"
 
 import JacketCollectionImage from "../../../src/Assest/images/jacket.jpg"
 import CustomerCamOneImage from "../../../src/Assest/images/IMG-7670.PNG"
 import CustomerCamTwoImage from "../../../src/Assest/images/IMG-7671.PNG"
 import CustomerCamThreeImage from "../../../src/Assest/images/IMG-7672.PNG"
 import AirBgImage from "../../../src/Assest/images/jordan3bg.jpg"
-import JsBgImage from "../../../src/Assest/images/jsbg32.png"
+import NikeBgImage from "../../../src/Assest/images/1252456.jpg"
+import YeezyBgImage from "../../../src/Assest/images/pexels-luis-quintero-14212621.jpg"
 
 
 // Import Swiper React components
@@ -126,12 +127,20 @@ const Sneakers = () => {
             if (window.innerWidth > 768){
                 // remove the custom class from all slide content elements
                 document.querySelectorAll('.slide-content').forEach(el => {
-                el.classList.remove('slide-image-right', 'slide-image-left');
+                    el.classList.remove('slide-image-right', 'slide-image-left');
                 });
+
+                document.querySelectorAll('.slide-text').forEach(el => {
+                    el.classList.remove('slide-text-right', 'slide-text-left');
+                });
+
+                // activeIndex
                 
                 // Add the animation class to the new active slide
                 const newActiveSlide = heroSlider.current.slides[heroSlider.current.realIndex];
-                newActiveSlide.querySelector('.slide-content').classList.add('slide-image-right');
+                newActiveSlide.querySelector('.slide-content').classList.add(heroSlider.current.realIndex % 2 === 0 ? 'slide-image-right' : 'slide-image-left'); // : 
+            
+                newActiveSlide.querySelector('.slide-text').classList.add(heroSlider.current.realIndex % 2 === 0 ? 'slide-text-left' : 'slide-text-right');
             }
             
         });
@@ -160,22 +169,22 @@ const Sneakers = () => {
         className="mySwiper relative" 
         >
             <SwiperSlide>
-                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                <div className=" relative pt-10  md:pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
                     <div  ref={textContainer} className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center ">
-                        <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                        <div className="w-full md:max-w-[500px] space-y-3 z-50 slide-text">
                             <h2 className="text-xl">Latest Kicks</h2>
-                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
+                            <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p> {/*Air Jordan 11 "Bred"*/}
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:right-10 md:w-[520px] md:brightness-100 slide-content" />
+                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:right-10 md:w-[600px] md:brightness-100 slide-content" />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1] ">
-                    <img src={JsBgImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-bottom mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:left-10 md:w-[520px] md:brightness-100 slide-content" />
+                <div className=" relative pt-10  md:pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1] ">
+                    <img src={AirBgImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-bottom mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:left-10 md:w-[700px] md:brightness-100 slide-content" />
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center ">
-                        <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                        <div className="w-full md:max-w-[500px] space-y-3 z-50 slide-text">
                             <h2 className="text-xl">Latest Kicks</h2>
                             <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
@@ -184,22 +193,22 @@ const Sneakers = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                <div className=" relative pt-10  md:pt-16 bg-[#ffffff] h-screen overflow-hidden flex flex-col-reverse justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-start items-center">
-                        <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                        <div className="w-full md:max-w-[500px] space-y-3 z-50 slide-text">
                             <h2 className="text-xl">Latest Kicks</h2>
                             <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
                         </div>
                     </div>
-                    <img src={AirBgImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:right-10 md:w-[580px] md:brightness-100 slide-content" />
+                    <img src={NikeBgImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-contain object-center mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:right-10 md:w-[700px] md:brightness-100 slide-content" />
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className=" relative pt-16 bg-[#e7e7e7] h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
-                    <img src={window.innerWidth < 768 ? SmallScreenSneakerImage : SneakerImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-top mx-auto sm:w-[60%] md:h-fit md:absolute md:-top-32 md:left-10 md:w-[580px] md:brightness-100 slide-content" />
+                <div className=" relative pt-10  md:pt-16 bg-[#efedf0] h-screen overflow-hidden flex flex-col justify-center md:gap-4 md:block border-b border-[#f1f1f1]">
+                    <img src={YeezyBgImage} alt="" className="w-11/12 h-1/2 max-h-1/2 object-cover object-center mx-auto sm:w-[60%] md:h-fit md:absolute md:top-0 md:bottom-0 md:my-auto md:left-10 md:w-[580px] md:brightness-100 slide-content" />
                     <div className="w-11/12 h-fit py-8 md:h-full mx-auto flex flex-row justify-end items-center">
-                        <div className="w-full md:max-w-[500px] space-y-3 z-50">
+                        <div className="w-full md:max-w-[500px] space-y-3 z-50 slide-text">
                             <h2 className="text-xl">Latest Kicks</h2>
                             <p className="font-semibold text-4xl md:text-5xl leading-10 md:leading-[60px]">Stack Your Rotation With The Hotest</p>
                             <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5">Shop Now</p>
@@ -231,7 +240,7 @@ const Sneakers = () => {
                 </div>
             </div>
         </Swiper>
-        <div className="py-8 border-b">
+        <div className="py-8 sm:py-10 md:py-12 border-b">
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full flex flex-row justify-between items-center gap-4">
                     <div>
@@ -278,7 +287,7 @@ const Sneakers = () => {
                 </Swiper>
             </div>
         </div>
-        <div  className="py-8 border-b">
+        <div  className="py-8 sm:py-10 md:py-12 border-b">
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full flex flex-row justify-between items-center gap-4">
                     <div>
@@ -325,42 +334,42 @@ const Sneakers = () => {
                 </Swiper>
             </div>
         </div>
-        <div className="py-8 border-b bg-black">
+        <div className="py-12 border-b bg-black">
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full text-white">
                     <p className="text-2xl font-semibold">Shop by Collection</p>
                     <p className=" ">Find your perfect style in our collections</p>
                 </div>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] md:h-[600px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={ShoeCollectionImage} alt="" className="h-full w-full object-fill group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700" />
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4  group-hover:bg-[#eff0f2] group-hover:text-black">Sneakers</p>
                     </div>
-                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] md:h-[600px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={ClothCollectionImage} alt="" className="h-full w-full object-fill group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Shirts</p>
                     </div>
-                    <div className="relative row-span-1 overflow-hidden group cursor-pointer">
-                        <img src={CapCollectionImage} alt="" className="h-full object-cover w-full group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
-                        <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Head Gears</p>
-                    </div>
-                    <div className="relative row-span-1 overflow-hidden group cursor-pointer">
-                        <img src={SunglassesCollectionImage} alt="" className="h-full object-cover w-full object-center group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
-                        <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Sunglasses</p>
-                    </div>
-                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] md:h-[600px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={PantsCollectionImage} alt="" className="h-full w-full object-fill group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700 " />
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Pants</p>
                     </div>
-                    <div className="relative h-[267px] row-span-1 overflow-hidden group cursor-pointer">
-                        <img src={BagCollectionImage} alt="" className="h-full object-cover w-full group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
-                        <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Bags</p>
-                    </div>
-                    <div className="relative h-[480px] sm:h-[550px] row-span-2 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] md:h-[600px] row-span-2 overflow-hidden group cursor-pointer">
                         <img src={JacketCollectionImage} alt="" className="h-full w-full object-cover group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-fit px-6 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Jackets & Hoodies</p>
                     </div>
-                    <div className="relative h-[267px] row-span-1 overflow-hidden group cursor-pointer">
+                    <div className="relative h-[480px] sm:h-[550px] md:h-[600px] row-span-2 overflow-hidden group cursor-pointer">
+                        <img src={CapCollectionImage} alt="" className="h-full object-cover w-full group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
+                        <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Head Gears</p>
+                    </div>
+                    {/* <div className="relative row-span-1 overflow-hidden group cursor-pointer">
+                        <img src={SunglassesCollectionImage} alt="" className="h-full object-cover w-full object-center group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
+                        <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Sunglasses</p>
+                    </div> */}
+                    <div className="relative h-[292px] row-span-1 overflow-hidden group cursor-pointer">
+                        <img src={BagCollectionImage} alt="" className="h-full object-cover object-center w-full group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
+                        <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Bags</p>
+                    </div>
+                    <div className="relative h-[292px] row-span-1 overflow-hidden group cursor-pointer">
                         <img src={AssessoriesCollectionImage} alt="" className="h-full object-cover w-full object-center group-active:scale-125 md:group-hover:scale-125 transition-all ease-out duration-700"/>
                         <p className="w-36 px-4 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4 group-hover:bg-[#eff0f2] group-hover:text-black">Assessories</p>
                     </div>
@@ -369,7 +378,7 @@ const Sneakers = () => {
             </div>
         </div>
         {/*Dont forget this section
-        <div className="py-8 border-b">
+        <div className="py-8 sm:py-10 md:py-12 border-b">
         //     <div className="mx-auto w-11/12 space-y-6">
                 
         //     </div>
@@ -383,29 +392,29 @@ const Sneakers = () => {
 
         //     </div>
         </div> */}
-        <div className="py-8 border-b">
+        <div className="py-8 sm:py-10 md:py-12 border-b">
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full">
                     <p className="text-2xl font-semibold">Style Inspiration</p>
                     <p className=" ">Photos from our customers' cam</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="h-[500px] sm:h-[550px] border relative">
+                    <div className="h-[500px] sm:h-[550px] md:h-[600px] border relative">
                         <img src={CustomerCamOneImage} alt="" className="h-full w-full object-cover"/>
                         <p className="w-fit px-6 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4">Shop Fit</p>
                     </div>
-                    <div className="h-[500px] sm:h-[550px] border relative ">
+                    <div className="h-[500px] sm:h-[550px] md:h-[600px] border relative ">
                         <img src={CustomerCamTwoImage} alt="" className="h-full w-full object-cover object-bottom"/>
                         <p className="w-fit px-6 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4">Shop Fit</p>
                     </div>
-                    <div className="h-[500px] sm:h-[550px] border relative">
+                    <div className="h-[500px] sm:h-[550px] md:h-[600px] border relative">
                         <img src={CustomerCamThreeImage} alt="" className="h-full w-full object-cover"/>
                         <p className="w-fit px-6 py-2 bg-black text-white rounded-md text-center text-lg cursor-pointer font-medium flex flex-row items-center justify-center gap-1.5 absolute mx-auto left-0 right-0 bottom-4">Shop Fit</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div className="py-8 ">
+        <div className="py-8 sm:py-10 md:py-12 ">
             <div className="mx-auto w-11/12 space-y-6">
                 <div className="w-full">
                     <p className="text-2xl font-semibold">Trending Brands</p>
